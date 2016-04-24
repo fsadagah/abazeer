@@ -1,0 +1,88 @@
+<h1>Product ID:<%= @product.id %></h1>
+
+<p>
+  <strong>Name: (english)</strong>
+  <%= @product.name_en %>
+</p>
+ 
+<p>
+  <strong>Description: (english)</strong>
+  <%= @product.desc_en %>
+</p>
+
+<p>
+  <strong>Price: (english)</strong>
+  <%= @product.price_en %>
+</p>
+
+<p>
+  <strong>Name: (arabic)</strong>
+  <%= @product.name_ar %>
+</p>
+
+<p>
+  <strong>Description: (arabic)</strong>
+  <%= @product.desc_ar %>
+</p>
+
+<p>
+  <strong>Price: (arabic)</strong>
+  <%= @product.price_ar %>
+</p>
+
+<p>
+  <strong>Categories 1:</strong>
+	<% if @product.category0_id.blank? %>
+	none	
+	<% else %>
+  	<% category = Category.find(@product.category0_id) %>
+  	<%= category.name_en %>
+	<% end %>
+</p>
+
+<p>
+  <strong>Categories 2:</strong>
+	<% if @product.category1_id.blank? %>
+	none	
+	<% else %>
+  	<% category = Category.find(@product.category1_id) %>
+  	<%= category.name_en %>
+	<% end %>
+</p>
+
+<p>
+  <strong>Categories 3:</strong>
+	<% if @product.category2_id.blank? %>
+	none	
+	<% else %>
+  	<% category = Category.find(@product.category2_id) %>
+  	<%= category.name_en %>
+	<% end %>
+</p>
+
+<p>
+  <strong>Categories 4:</strong>
+	<% if @product.category3_id.blank? %>
+	none	
+	<% else %>
+  	<% category = Category.find(@product.category3_id) %>
+  	<%= category.name_en %>
+	<% end %>
+</p>
+
+<p>
+  <strong>Categories 5:</strong>
+	<% if @product.category4_id.blank? %>
+	none	
+	<% else %>
+  	<% category = Category.find(@product.category4_id) %>
+  	<%= category.name_en %>
+	<% end %>
+</p>
+
+<p>
+  <strong>Enabled/Disabled:</strong>
+  <%= @product.isactive %>
+</p>
+<%= link_to 'Edit', edit_product_path(@product) %>
+<%= link_to 'Back to index', products_path %>

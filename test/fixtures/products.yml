@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_en: MyText
+  desc_en: MyText
+  price_en: MyText
+  name_ar: MyText
+  desc_ar: MyText
+  price_ar: MyText
+  category_id: 
+  isactive: false
+
+two:
+  name_en: MyText
+  desc_en: MyText
+  price_en: MyText
+  name_ar: MyText
+  desc_ar: MyText
+  price_ar: MyText
+  category_id: 
+  isactive: false

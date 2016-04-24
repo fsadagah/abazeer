@@ -1,0 +1,63 @@
+<%= form_for @product do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@product.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li style="color:red;"><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :Name_English %><br>
+    <%= f.text_field :name_en %>
+  </p>
+ 
+  <p>
+    <%= f.label :Description_English %><br>
+    <%= f.text_field :desc_en %>
+  </p>
+
+  <p>
+    <%= f.label :Price_English %><br>
+    <%= f.text_field :price_en %>
+  </p>
+
+  <p>
+    <%= f.label :Name_Arabic %><br>
+    <%= f.text_field :name_ar %>
+  </p>
+
+  <p>
+    <%= f.label :Description_Arabic %><br>
+    <%= f.text_field :desc_ar %>
+  </p>
+
+  <p>
+    <%= f.label :Price_Arabic %><br>
+    <%= f.text_field :price_ar %>
+  </p>
+
+  <p>
+    <%= f.label :Categories %> **Please make sure you add all categories first before adding products<br>
+	<%= select("product", "category0_id", Category.all.collect {|p| [ p.name_en, p.name_ar, p.id ] }, {include_blank: '---'}) %>
+	<%= select("product", "category1_id", Category.all.collect {|p| [ p.name_en, p.name_ar, p.id ] }, {include_blank: '---'}) %>
+	<%= select("product", "category2_id", Category.all.collect {|p| [ p.name_en, p.name_ar, p.id ] }, {include_blank: '---'}) %>
+	<%= select("product", "category3_id", Category.all.collect {|p| [ p.name_en, p.name_ar, p.id ] }, {include_blank: '---'}) %>
+	<%= select("product", "category4_id", Category.all.collect {|p| [ p.name_en, p.name_ar, p.id ] }, {include_blank: '---'}) %>
+  </p>
+
+  <p>
+    <%= f.label :Check_box_to_make_product_active %><br>
+    <%= f.check_box :isactive %><br><br> 
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

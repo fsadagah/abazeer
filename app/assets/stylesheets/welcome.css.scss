@@ -1,0 +1,25 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+	background-color: #f9f9f0;
+	padding: 2%;
+}
+h1{
+	color: #747466;
+}
+a{
+	text-decoration: none;
+	color: #82c31f;
+	padding: 1% 0% 1% 0%;
+}
+a:hover{
+	color: #747466;
+}
+ul li{
+	padding-bottom: 1%;
+}
+table, table td, table th{
+	border: 1px solid;
+	text-align: center;
+}

@@ -1,0 +1,28 @@
+<h1>Category ID:<%= @category.id %></h1>
+
+<p>
+  <strong>Name: (english)</strong>
+  <%= @category.name_en %>
+</p>
+ 
+<p>
+  <strong>Name: (arabic)</strong>
+  <%= @category.name_ar %>
+</p>
+
+<p>
+  <strong>Thumbnail URL:</strong>
+  <%= @category.thumb_url %>
+</p>
+ 
+<p>
+  <strong>Panoramic URL:</strong>
+  <%= @category.pano_url %>
+</p>
+
+<p>
+  <strong>Enabled/Disabled:</strong>
+  <%= @category.isactive %>
+</p>
+<%= link_to 'Edit', edit_category_path(@category) %>
+<%= link_to 'Back to index', categories_path %>

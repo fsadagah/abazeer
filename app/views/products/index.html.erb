@@ -1,0 +1,61 @@
+<h1>Listing all products</h1>
+<ul>
+	<li><%= link_to 'Back to main page', welcome_index_path %></li>
+	<li><%= link_to 'Add new product', new_product_path %></li>
+</ul>
+<h3>Category Index</h3>
+<table>
+		<tr>
+			<th>ID</th>
+			<th>Name_EN</th>
+			<th>Name_AR</th>
+		</tr>
+	<% @categories.each do |category| %>
+		<tr>
+			<td><%= category.id %></td>
+			<td><%= category.name_en %></td>
+			<td><%= category.name_ar %></td>
+		</tr>
+	<% end %>
+</table>
+<h3>Product Database</h3>
+<table>
+  <tr>
+    <th>ID</th>	
+    <th>Name (english)</th>
+    <th>Description (english)</th>
+    <th>Price (english)</th>
+    <th>Name (arabic)</th>
+    <th>Description (arabic)</th>
+    <th>Price (arabic)</th>
+    <th>Categories 1</th>
+    <th>Categories 2</th>
+    <th>Categories 3</th>
+    <th>Categories 4</th>
+    <th>Categories 5</th>
+    <th>Enabled</th>
+  </tr>
+ 
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.id %></td>
+      <td><%= product.name_en %></td>
+      <td><%= product.desc_en %></td>
+      <td><%= product.price_en %></td>
+      <td><%= product.name_ar %></td>
+      <td><%= product.desc_ar %></td>
+      <td><%= product.price_ar %></td>
+      <td><%= product.category0_id %></td>
+      <td><%= product.category1_id %></td>
+      <td><%= product.category2_id %></td>
+      <td><%= product.category3_id %></td>
+      <td><%= product.category4_id %></td>
+      <td><%= product.isactive %></td>
+      <td><%= link_to 'Show', product_path(product) %></td>
+      <td><%= link_to 'Edit', edit_product_path(product) %></td>
+	  <td><%= link_to 'Delete', product_path(product),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

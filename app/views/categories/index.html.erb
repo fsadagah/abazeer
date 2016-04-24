@@ -1,0 +1,31 @@
+<h1>Listing all categories</h1>
+<ul>
+	<li><%= link_to 'Back to main page', welcome_index_path %></li>
+	<li><%= link_to 'Add new category', new_category_path %></li>
+</ul>
+<table>
+  <tr>
+    <th>ID</th>	
+    <th>Name (english)</th>
+    <th>Name (Arabic)</th>
+    <th>Thumbnail URL</th>
+    <th>Panoramic URL</th>
+    <th>Enabled</th>
+  </tr>
+ 
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.id %></td>
+      <td><%= category.name_en %></td>
+      <td><%= category.name_ar %></td>
+      <td><%= category.thumb_url %></td>
+      <td><%= category.pano_url %></td>
+      <td><%= category.isactive %></td>
+      <td><%= link_to 'Show', category_path(category) %></td>
+      <td><%= link_to 'Edit', edit_category_path(category) %></td>
+	  <td><%= link_to 'Delete', category_path(category),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
